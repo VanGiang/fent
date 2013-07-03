@@ -58,10 +58,12 @@
     </div>
     <div class="row">
         <div class="four columns">
-            <?php
-                echo CHtml::checkBox('no_time_given', $no_time_given, array('checked' => 'checked'));
-            ?>
-            <span></span> Display no time given
+            <label>
+                <?php
+                    echo CHtml::checkBox('no_time_given', $no_time_given, array('checked' => 'checked'));
+                ?>
+                Display no time given
+            </label>
         </div>
     </div>
     <div class="row">

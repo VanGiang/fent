@@ -39,9 +39,10 @@ $this->pageTitle=Yii::app()->name;
           </div>      
           <div style="height:20px"></div>
           <div class="row" style="color: blue; font-size: 8px">
-              <label class="checkbox">
+              <label>
                 <input name='SignInForm[rememberMe]' type="checkbox">
-                 Log on automatically</label>
+                 Log on automatically
+              </label>
           </div>
           <div class="row"><?php echo CHtml::link('Forget your password ?', array('user/forgetPassword')); ?></div>
           <div style="height:40px"></div>

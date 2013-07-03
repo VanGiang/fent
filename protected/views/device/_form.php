@@ -8,17 +8,15 @@
         'enctype' => 'multipart/form-data',
     ),
 )); ?>
-
-        <p class="note">Fields with <span class="required">*</span> are required.</p>
-
-
-        <?php echo $form->errorSummary($model); ?>
-
         <div class="row">
+            <p class="note">Fields with <span class="required">*</span> are required.</p>
+        </div>
+        
+        <div class="row">
+            <?php echo $form->errorSummary($model); ?>
             <div class="field">
                 <?php echo $form->labelEx($model,'name'); ?>
                 <?php echo $form->textField($model,'name',array('class' => 'text input', 'placeholder' => 'Name')); ?>
-                <?php echo $form->error($model,'name'); ?>
             </div>
         </div>
 
@@ -26,7 +24,6 @@
             <div class="field">
                 <?php echo $form->labelEx($model,'description'); ?>
                 <?php echo $form->textArea($model,'description',array('class' => 'textarea input', 'placeholder' => 'Description')); ?>
-                <?php echo $form->error($model,'description'); ?>
             </div>
         </div>
 
@@ -34,7 +31,6 @@
             <div class="field">
                 <?php echo $form->labelEx($model,'serial_number'); ?>
                 <?php echo $form->textField($model,'serial_number',array('class' => 'text input', 'placeholder' => 'Serial number')); ?>
-                <?php echo $form->error($model,'serial_number'); ?>
             </div>
         </div>
         
@@ -42,7 +38,6 @@
             <div class="field">
                 <?php echo $form->labelEx($model,'management_number'); ?>
                 <?php echo $form->textField($model,'management_number',array('class' => 'text input', 'placeholder' => 'Management number')); ?>
-                <?php echo $form->error($model,'management_number'); ?>
             </div>
         </div>
         
@@ -50,7 +45,6 @@
             <div class="field">
                 <?php echo $form->labelEx($model,'model_number'); ?>
                 <?php echo $form->textField($model,'model_number',array('class' => 'text input', 'placeholder' => 'Model number')); ?>
-                <?php echo $form->error($model,'model_number'); ?>
             </div>
         </div>
         
@@ -58,22 +52,20 @@
             <div class="field">
                 <?php echo $form->labelEx($model,'maker'); ?>
                 <?php echo $form->textField($model,'maker',array('class' => 'text input', 'placeholder' => 'Maker')); ?>
-                <?php echo $form->error($model,'maker'); ?>
             </div>
         </div>
 
         <div class="row">
-            <div class="field">
+            <div class="field four columns">
                 <?php echo $form->labelEx($model,'status'); ?>
-                <?php echo '<div class="picker">'; ?>
+                <?php echo '<div class="wide picker">'; ?>
                 <?php echo CHtml::activeDropDownList($model,'status',array(Constant::$DEVICE_NORMAL => 'Avalable', Constant::$DEVICE_UNAVALABLE => 'Unavalable')); ?>
                 <?php echo '</div>'; ?>
-                <?php echo $form->error($model,'status'); ?>
             </div>
         </div>
 
         <div class="row">
-            <div class="field">
+            <div class="field four columns">
                 <?php
                     if (isset($category_id)) {
                         $model->category_id = $category_id;
@@ -84,7 +76,6 @@
                     $list = CHtml::listData($categories, 'id', 'name');
                     echo CHtml::activeDropDownList($model, 'category_id', $list);
                     echo '</div>';
-                    echo $form->error($model,'category_id');
                 ?>
             </div>
         </div>

@@ -48,6 +48,7 @@ class Profile extends ActiveRecord
         // will receive user inputs.
         return array(
             array('email, employee_code', 'required'),
+            array('email, employee_code', 'unique'),
             array('phone, date_of_birth, updated_at, created_at', 'numerical', 'integerOnly' => true),
             array('email, position', 'length', 'max' => 45),
             array('name, secret_key', 'length', 'max' => 255),

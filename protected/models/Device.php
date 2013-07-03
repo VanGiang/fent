@@ -45,7 +45,8 @@ class Device extends ActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name, serial_number, category_id', 'required'),
+            array('name, category_id, management_number', 'required'),
+            array('serial_number, management_number', 'unique'),
             array('updated_at, created_at, category_id', 'numerical', 'integerOnly' => true),
             array('name, maker, serial_number, management_number, model_number, status', 'length', 'max' => 45),            
             // The following rule is used by search().
